@@ -15,3 +15,13 @@ bot.on('ready', ()=>{
  bot.setActivity("Aegean Airlines")
  console.log("Ready!")
 })
+
+bot.on("guildMemberAdd", member => {
+const welcomeChannel = member.guild.channels.cache.find(channel => channel.name == 'Welcome-Goodbye')
+let embed = new Disocrd.MessageEmbed()
+.setTitle(`Welcome to Aegean`)
+.addField("**Name:**", Welcome to Aegean ${member.user})
+.addFiled("**Tag:**", ${member.user.tag}
+.addField("**Position:**", member.guild.memberCount + "Members")
+welcomeChannel.send(embed)
+});
