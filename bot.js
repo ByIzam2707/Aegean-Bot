@@ -25,3 +25,13 @@ let embed = new Disocrd.MessageEmbed()
 .addField("**Position:**", member.guild.memberCount + "Members")
 welcomeChannel.send(embed)
 });
+
+bot.on("guildMemberRemove", member => {
+const welcomeChannel = member.guild.channels.cache.find(channel => channel.name == 'Welcome-Goodbye')
+let embed = new Disocrd.MessageEmbed()
+.setTitle(`Someone decided to leave Aegean`)
+.addField("**Name:**", Decided to leave Aegean ${member.user})
+.addFiled("**Tag:**", ${member.user.tag}
+.addField("**Position:**", member.guild.memberCount + "Members")
+welcomeChannel.send(embed)
+});
