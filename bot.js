@@ -17,7 +17,7 @@ bot.on('ready', ()=>{
 })
 
 bot.on("guildMemberAdd", member => {
-const welcomeChannel = member.guild.channels.cache.find(channel => channel.name == 'Welcome-Goodbye')
+const welcomeChannel = member.guild.channels.cache.find(channel => channel.name == 'welcome-goodbye')
 let embed = new Disocrd.MessageEmbed()
 .setTitle(`Welcome to Aegean`)
 .addField("**Name:**", Welcome to Aegean ${member.user})
@@ -27,11 +27,11 @@ welcomeChannel.send(embed)
 });
 
 bot.on("guildMemberRemove", member => {
-const welcomeChannel = member.guild.channels.cache.find(channel => channel.name == 'Welcome-Goodbye')
+const leaveChannel = member.guild.channels.cache.find(channel => channel.name == 'welcome-goodbye')
 let embed = new Disocrd.MessageEmbed()
 .setTitle(`Someone decided to leave Aegean`)
 .addField("**Name:**", Decided to leave Aegean ${member.user})
 .addFiled("**Tag:**", ${member.user.tag}
 .addField("**Position:**", member.guild.memberCount + "Members")
-welcomeChannel.send(embed)
+leaveChannel.send(embed)
 });
