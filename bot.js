@@ -4,6 +4,11 @@ const bot = new Client({
   disableEveryone: true;
 )}
 
+const config = require('./config.json')
+const prefix = config.prefix
+const token = config.token
+
+
 bot.commands = new Collection();
 bot.aliases = new Collection();
 bot.categories = fs.readdirSync("./commands/);
@@ -35,3 +40,8 @@ let embed = new Disocrd.MessageEmbed()
 .addField("**Position:**", member.guild.memberCount + "Members")
 leaveChannel.send(embed)
 });
+
+
+
+
+bot.login(token)
